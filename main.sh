@@ -16,4 +16,5 @@ then
     mount $DISC $SSD
 fi
 
+# Creating backup of entire system
 $(yunohost backup create -o $BACKUP_DIRECTORY)
