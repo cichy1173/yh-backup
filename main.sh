@@ -4,6 +4,7 @@
 # declare drive mount and place variables
 SSD="/mnt/ssd/"
 DISC="/dev/sda1/"
+BACKUP_DIRECTORY="/mnt/ssd/backup/"
 
 # checking that $SSD have files
 x=$(ls $SSD | wc -l)
@@ -15,4 +16,4 @@ then
     mount $DISC $SSD
 fi
 
-$(yunohost backup create)
+$(yunohost backup create -o $BACKUP_DIRECTORY)
