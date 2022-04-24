@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# It is only for Yunohost https://yunohost.org/ar/backup
 # declare drive mount and place variables
 SSD="/mnt/ssd/"
 DISC="/dev/sda1/"
@@ -15,8 +16,3 @@ then
 fi
 
 $(yunohost backup create)
-
-
-
-
-    
