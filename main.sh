@@ -18,3 +18,5 @@ fi
 
 # Creating backup of entire system
 $(yunohost backup create -o $BACKUP_DIRECTORY)
+
+# for deleting old files find ./my_dir -mtime +10 -type f -delete
