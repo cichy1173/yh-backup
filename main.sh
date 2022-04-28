@@ -5,6 +5,7 @@
 SSD="/mnt/ssd/"
 DISC="/dev/sda1/"
 BACKUP_DIRECTORY="/mnt/ssd/backup/"
+LOG_FILE="/mnt/ssd/backup/logfile"
 
 # checking that $SSD have files
 x=$(ls $SSD | wc -l)
@@ -17,6 +18,8 @@ then
 fi
 
 # Creating backup of entire system
-$(yunohost backup create -o $BACKUP_DIRECTORY)
+backuppingLog=$(yunohost backup create -o $BACKUP_DIRECTORY)
+echo "Backup created $backuppingLog" >> $LOG_FILE
 
-# for deleting old files find ./my_dir -mtime +10 -type f -delete
+# for deleting old files, older than 25 days 
+find $BACKUP_DIRECTORY -mtime +25 -type f -delete
