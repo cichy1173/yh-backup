@@ -18,8 +18,13 @@ then
 fi
 
 # Creating backup of entire system
-backuppingLog=$(yunohost backup create -o $BACKUP_DIRECTORY)
-echo "Backup created $backuppingLog" >> $LOG_FILE
+# backuppingLog=
+echo "Creating backup"
+echo "Creating backup" >> $LOG_FILE
+# backuping only hedgedoc and droppy apps
+yunohost backup create --apps hedgedoc droppy -o $BACKUP_DIRECTORY
+echo "Backup created"
+echo "Backup created" >> $LOG_FILE
 
 # for deleting old files, older than 25 days 
-find $BACKUP_DIRECTORY -mtime +25 -type f -delete
+# find $BACKUP_DIRECTORY -mtime +25 -type f -delete
