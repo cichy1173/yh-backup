@@ -17,5 +17,5 @@ You can change `find` command to change how old files should be deleted.
 
 If you want to automate backups with this script, you should declare that in `crontab`. For example, I want to create backups every tuesday, Thursday and Saturday. 
 ```bash
-0 3 * * 2,4,6 bash <script_path>/yunohost-backup/main.sh
+0 3 * * 2,4,6 bash <script_path>/yh-backup/main.sh
 ```
