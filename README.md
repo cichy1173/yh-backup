@@ -4,9 +4,9 @@ It is my personal bash script for creating backups of most used apps on my Yunoh
 
 ## Installation
 
-```bash=
+```bash
 git clone https://github.com/cichy1173/yunohost-backup.git
-chmod u+x /yunohost-backup/script.sh
+chmod u+x yunohost-backup/script.sh
 ```
 ## Usage
 Firstly, is important to declare all info such as `SSD`, `DISC`, `BACKUP_DIRECTORY`. You should also edit `FAIL_STRING` and change `/dev/sda1` for the drive, that you use to backup data (the same as `DISC` value).
