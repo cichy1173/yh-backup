@@ -6,7 +6,7 @@ It is my personal bash script for creating backups of most used apps on my Yunoh
 
 ```bash
 https://github.com/cichy1173/yh-backup.git
-chmod u+x yunohost-backup/main.sh
+chmod u+x yh-backup/main.sh
 ```
 ## Usage
 Firstly, is important to declare all info such as `SSD`, `DISC`, `BACKUP_DIRECTORY`. You should also edit `FAIL_STRING` and change `/dev/sda1` for the drive, that you use to backup data (the same as `DISC` value).
