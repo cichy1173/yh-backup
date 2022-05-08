@@ -10,6 +10,7 @@ CURRENT_DATE=$(date "+%Y%m%d-%H%M")
 
 # checking that $SSD have files
 isDriveMounted=$(ls $SSD | wc -l)
+failString=$(echo "mount: /mnt: special device /dev/sda1 does not exist.")
 
 if [ 1 -gt $isDriveMounted ]
 then
@@ -17,9 +18,9 @@ then
     echo "SSD is NOT mounted"
 
     isReallyMounted=$(mount $DISC $SSD) #if empty, drive is mounted
-    isDriveAvailable=$(echo $isReallyMounted | wc -l)
+    isDriveAvailable=$(echo $isReallyMounted)
 
-    if [ 1 -ge $isDriveAvailable ]
+    if [[ $failString == $isDriveAvailable ]]
     then
         #ssd is not connected to computer
         echo "Drive is not connected. Breaking!"
