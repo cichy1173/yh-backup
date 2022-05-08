@@ -1,4 +1,4 @@
-# yunohost-backup
+# yh-backup
 
 It is my personal bash script for creating backups of most used apps on my Yunohost server.
 
