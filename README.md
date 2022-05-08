@@ -13,9 +13,9 @@ Firstly, is important to declare all info such as `SSD`, `DISC`, `BACKUP_DIRECTO
 
 You should declare apps that You want to backup in `yunohost backup create --apps <your apps> ...` command.
 
-You can change `find` command to change how old files should be deleted. 
+Furthermore, you can change `find` command to change how old files should be deleted. 
 
-If you want to automate backups with this script, you should declare that in `crontab`. For example, I want to create backups every tuesday, Thursday and Saturday. 
+If you want to automate backups with this script, you should declare that in `crontab`. For example, I want to create backups every Tuesday, Thursday and Saturday. 
 ```bash
 0 3 * * 2,4,6 bash <script_path>/yh-backup/main.sh
 ```
