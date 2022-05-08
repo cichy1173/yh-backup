@@ -10,7 +10,7 @@ CURRENT_DATE=$(date "+%Y%m%d-%H%M")
 
 # checking that $SSD have files
 isDriveMounted=$(ls $SSD | wc -l)
-failString=$(echo "mount: /mnt: special device /dev/sda1 does not exist.")
+FAIL_STRING=$(echo "mount: /mnt: special device /dev/sda1 does not exist.")
 
 if [ 1 -gt $isDriveMounted ]
 then
@@ -20,7 +20,7 @@ then
     isReallyMounted=$(mount $DISC $SSD) #if empty, drive is mounted
     isDriveAvailable=$(echo $isReallyMounted)
 
-    if [[ $failString == $isDriveAvailable ]]
+    if [[ $FAIL_STRING == $isDriveAvailable ]]
     then
         #ssd is not connected to computer
         echo "Drive is not connected. Breaking!"
@@ -30,9 +30,8 @@ fi
 
 #creating new directory for the backup
 mkdir $BACKUP_DIRECTORY$CURRENT_DATE
-# for creating directory date "+%Y%m%d"
 
-# Creating backup of entire system
+# Creating backup
 
 echo "Creating backup"
 # echo "Creating backup" >> $LOG_FILE
