@@ -42,3 +42,6 @@ echo "Backup created"
 
 # for deleting old files, older than 20 days 
 find $BACKUP_DIRECTORY -mtime +20 -type f -delete
+
+# For deleting symlinks for old backups. It is required to show backups in webadmin panel
+find /home/yunohost.backup/archives/ -mtime +20 -type f -delete
