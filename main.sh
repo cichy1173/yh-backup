@@ -36,7 +36,7 @@ mkdir $BACKUP_DIRECTORY$CURRENT_DATE
 echo "Creating backup"
 # echo "Creating backup" >> $LOG_FILE
 # backuping only hedgedoc, gitea, wallabag2 and droppy
-yunohost backup create --apps wallabag2 hedgedoc gitea droppy -o $BACKUP_DIRECTORY$CURRENT_DATE
+yunohost backup create --apps wallabag2 hedgedoc droppy -o $BACKUP_DIRECTORY$CURRENT_DATE
 echo "Backup created"
 # echo "Backup created" >> $LOG_FILE
 
