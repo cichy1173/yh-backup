@@ -5,7 +5,7 @@ It is my personal bash script for creating backups of most used apps on my Yunoh
 ## Installation
 
 ```bash
-https://github.com/cichy1173/yh-backup.git
+git clone https://github.com/cichy1173/yh-backup.git
 chmod u+x yh-backup/main.sh
 ```
 ## Usage
