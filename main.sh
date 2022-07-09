@@ -3,14 +3,14 @@
 # It is only for Yunohost https://yunohost.org/ar/backup
 # declare drive mount and place variables
 SSD="/mnt/ssd/"
-DISC="/dev/sda1"
+DISC="/dev/sdb1"
 BACKUP_DIRECTORY="/mnt/ssd/backup/"
 # LOG_FILE="/mnt/ssd/backup/logfile"
 CURRENT_DATE=$(date "+%Y%m%d-%H%M")
 
 # checking that $SSD have files
 isDriveMounted=$(ls $SSD | wc -l)
-FAIL_STRING=$(echo "mount: /mnt: special device /dev/sda1 does not exist.")
+FAIL_STRING=$(echo "mount: /mnt: special device /dev/sdb1 does not exist.")
 
 if [ 1 -gt $isDriveMounted ]
 then
@@ -36,7 +36,7 @@ mkdir $BACKUP_DIRECTORY$CURRENT_DATE
 echo "Creating backup"
 # echo "Creating backup" >> $LOG_FILE
 # backuping only hedgedoc, gitea, wallabag2 and droppy
-yunohost backup create --apps wallabag2 hedgedoc droppy -o $BACKUP_DIRECTORY$CURRENT_DATE
+yunohost backup create --apps wallabag2 hedgedoc droppy nextcloud -o $BACKUP_DIRECTORY$CURRENT_DATE
 echo "Backup created"
 # echo "Backup created" >> $LOG_FILE
 
