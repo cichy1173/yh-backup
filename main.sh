@@ -35,8 +35,8 @@ mkdir $BACKUP_DIRECTORY$CURRENT_DATE
 
 echo "Creating backup"
 
-# backuping only chosen apps
-yunohost backup create --apps wallabag2 hedgedoc my_webapp nextcloud jellyfin homeassistant trilium -o $BACKUP_DIRECTORY$CURRENT_DATE
+# backuping all system
+yunohost backup create
 echo "Backup created"
 # echo "Backup created" >> $LOG_FILE
 
