@@ -36,7 +36,7 @@ mkdir $BACKUP_DIRECTORY$CURRENT_DATE
 echo "Creating backup"
 
 # backuping all system
-yunohost backup create
+yunohost backup create -o $BACKUP_DIRECTORY$CURRENT_DATE
 echo "Backup created"
 # echo "Backup created" >> $LOG_FILE
 
