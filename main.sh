@@ -10,7 +10,7 @@ CURRENT_DATE=$(date "+%Y%m%d-%H%M")
 
 # checking that $SSD have files
 isDriveMounted=$(ls $SSD | wc -l)
-FAIL_STRING=$(echo "mount: /mnt: special device /dev/sdb1 does not exist.")
+FAIL_STRING=$(echo "mount: /mnt: special device $DISC does not exist.")
 
 if [ 1 -gt $isDriveMounted ]
 then
