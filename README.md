@@ -11,7 +11,12 @@ chmod u+x yh-backup/main.sh
 ## Usage
 Firstly, is important to declare all info such as `SSD`, `DISC`, `BACKUP_DIRECTORY`. You should also edit `FAIL_STRING` and change `/dev/sda1` for the drive, that you use to backup data (the same as `DISC` value).
 
-You should declare apps that You want to backup in `yunohost backup create --apps <your apps> ...` command.
+In newest version script backups everything what is related to Yunohost with this command:
+```bash
+yunohost backup create
+```
+
+But You can declare apps that You want to backup in `yunohost backup create --apps <your apps> ...` command.
 
 Furthermore, you can change `find` command to change how old files should be deleted. 
 

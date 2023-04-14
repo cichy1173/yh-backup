@@ -3,7 +3,7 @@
 # It is only for Yunohost https://yunohost.org/ar/backup
 # declare drive mount and place variables
 SSD="/mnt/ssd/"
-DISC="/dev/sdb1"
+DISC="/dev/sda1"
 BACKUP_DIRECTORY="/mnt/ssd/backup/"
 # LOG_FILE="/mnt/ssd/backup/logfile"
 CURRENT_DATE=$(date "+%Y%m%d-%H%M")
