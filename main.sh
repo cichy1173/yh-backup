@@ -45,3 +45,6 @@ find $BACKUP_DIRECTORY -mtime +10 -type f -delete
 
 # For deleting symlinks for old backups. It is required to show backups in webadmin panel
 find /home/yunohost.backup/archives/ -mtime +10 -type l -delete
+
+# For deleting old backups, including backups of apps (pre-upgrade backups)
+find  /home/yunohost.backup/archives/ -mtime +10 -type f -delete
