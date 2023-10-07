@@ -37,14 +37,16 @@ echo "Creating backup"
 
 # backuping all system
 yunohost backup create -o $BACKUP_DIRECTORY$CURRENT_DATE
+# Create backup of external matrix for Nextcloud
+tar cvf - /mnt/raid1/Nextcloud_photos | pigz > $BACKUP_DIRECTORY/raid1_NC_$(date +\%Y\%m\%d).tar.xz
 echo "Backup created"
 # echo "Backup created" >> $LOG_FILE
 
-# for deleting old files, older than 10 days 
-find $BACKUP_DIRECTORY -mtime +10 -type f -delete
+# for deleting old files, older than 9 days 
+find $BACKUP_DIRECTORY -mtime +9 -type f -delete
 
 # For deleting symlinks for old backups. It is required to show backups in webadmin panel
-find /home/yunohost.backup/archives/ -mtime +10 -type l -delete
+find /home/yunohost.backup/archives/ -mtime +9 -type l -delete
 
 # For deleting old backups, including backups of apps (pre-upgrade backups)
 find  /home/yunohost.backup/archives/ -mtime +10 -type f -delete
