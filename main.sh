@@ -28,6 +28,15 @@ then
     fi    
 fi
 
+# for deleting old files, older than 9 days 
+find $BACKUP_DIRECTORY -mtime +5 -type f -delete
+
+# For deleting symlinks for old backups. It is required to show backups in webadmin panel
+find /home/yunohost.backup/archives/ -mtime +5 -type l -delete
+
+# For deleting old backups, including backups of apps (pre-upgrade backups)
+find  /home/yunohost.backup/archives/ -mtime +5 -type f -delete
+
 #creating new directory for the backup
 mkdir $BACKUP_DIRECTORY$CURRENT_DATE
 
@@ -41,12 +50,3 @@ yunohost backup create -o $BACKUP_DIRECTORY$CURRENT_DATE
 tar cvf - /mnt/raid1/Nextcloud_photos | pigz > $BACKUP_DIRECTORY/raid1_NC_$(date +\%Y\%m\%d).tar.xz
 echo "Backup created"
 # echo "Backup created" >> $LOG_FILE
-
-# for deleting old files, older than 9 days 
-find $BACKUP_DIRECTORY -mtime +9 -type f -delete
-
-# For deleting symlinks for old backups. It is required to show backups in webadmin panel
-find /home/yunohost.backup/archives/ -mtime +9 -type l -delete
-
-# For deleting old backups, including backups of apps (pre-upgrade backups)
-find  /home/yunohost.backup/archives/ -mtime +10 -type f -delete
